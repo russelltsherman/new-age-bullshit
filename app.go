@@ -30,6 +30,16 @@ func main() {
 		// 	log.Fatalf("cmd.Run() failed with %s\n", err)
 		// }
 
+		// executing using Cepstral voice
+		// Cepstral is certainly the highest quality voice
+		// Cepstral is very memory intensive
+		// playback on pi zero is pretty crappy due to lack of memory
+		// cmd := exec.Command("aoss", "swift", sentence)
+		// err := cmd.Run()
+		// if err != nil {
+		// 	log.Fatalf("cmd.Run() failed with %s\n", err)
+		// }
+
 		// executing using festival
 		// festival is most stable playback tested
 		c1 := exec.Command("echo", sentence)
