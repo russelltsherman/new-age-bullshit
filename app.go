@@ -2,7 +2,6 @@ package main
 
 import (
 	"io"
-	"log"
 	"os/exec"
 	"time"
 
@@ -12,7 +11,7 @@ import (
 func main() {
 	for {
 		sentence := bs.Sentence()
-		log.Println(sentence)
+		// log.Println(sentence)
 
 		// executing using osx say
 		// say is good sound but only available on OSX
@@ -23,7 +22,8 @@ func main() {
 		// }
 
 		// executing using espeak
-		// espeak frequently freezes
+		// voices are a bit screechy
+		// playback on pi zero frequently stops and slurs
 		// cmd := exec.Command("espeak", "-ven+f3", "-k5", "-s150", sentence)
 		// err := cmd.Run()
 		// if err != nil {
@@ -31,9 +31,8 @@ func main() {
 		// }
 
 		// executing using Cepstral voice
-		// Cepstral is certainly the highest quality voice
-		// Cepstral is very memory intensive
-		// playback on pi zero is pretty crappy due to lack of memory
+		// Cepstral is certainly the most natural sounding voice
+		// playback on pi zero frequently stops and slurs
 		// cmd := exec.Command("aoss", "swift", sentence)
 		// err := cmd.Run()
 		// if err != nil {
@@ -41,7 +40,8 @@ func main() {
 		// }
 
 		// executing using festival
-		// festival is most stable playback tested
+		// voice quality is ok
+		// playback on pi zero is the most stable of all tested
 		c1 := exec.Command("echo", sentence)
 		c2 := exec.Command("festival", "--tts")
 		r, w := io.Pipe()
