@@ -2,8 +2,12 @@
 
 Inspired by [sebpearce](https://github.com/sebpearce/bullshit)
 
-ported to golang
+ported to golang and modified to send generated text to text to speech engine.
 
-sends generated text to text to speech engine.
+includes execution code examples for the following TTS engines
 
-includes execution code examples for `say`, `espeak`, `festival`, and `Cepstral` voices.
+- `say`
+- `espeak`
+- `festival`
+- `Cepstral`
+- `pico`
