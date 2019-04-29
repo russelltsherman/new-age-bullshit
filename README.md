@@ -4,6 +4,6 @@ Inspired by [sebpearce](https://github.com/sebpearce/bullshit)
 
 ported to golang
 
-sends generated text to text to speech engine
+sends generated text to text to speech engine.
 
-currently only supports OSX using `say`
+includes execution code examples for `say`, `espeak`, `festival`, and `Cepstral` voices.
