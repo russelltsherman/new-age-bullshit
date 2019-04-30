@@ -18,9 +18,9 @@ func PicoCommand() *cobra.Command {
 		Run: func(cmd *cobra.Command, args []string) {
 			for {
 				sentence := bs.Sentence()
-				c1 := exec.Command("pico2wav", "-l", language, "-w", "/tmp/output.wav", sentence)
+				c1 := exec.Command("pico2wave", "-l", language, "-w", "/tmp/bullshit/output.wav", sentence)
 				c1.Run()
-				c2 := exec.Command("aplay", "/tmp/output.wav")
+				c2 := exec.Command("aplay", "/tmp/bullshit/output.wav")
 				c2.Run()
 				time.Sleep(1000 * time.Millisecond)
 			}
