@@ -24,7 +24,7 @@ func CepstralCommand() *cobra.Command {
 			}
 		},
 	}
-	// https://www.cepstral.com
+	// https://www.cepstral.com/en/personal
 	// options depend on which voices you have licensed and installed
 	cmd.Flags().StringVarP(&voice, "voice", "v", "David", "the voice to use")
 

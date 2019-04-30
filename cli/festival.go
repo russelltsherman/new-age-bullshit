@@ -33,10 +33,12 @@ func FestivalCommand() *cobra.Command {
 			}
 		},
 	}
-	cmd.Flags().StringVarP(&language, "langugage", "l", "english", "the language to use")
 
-	// --language LANG
-	// Set the default language to LANG. Currently LANG may be one of english, spanish or welsh (depending on what voices are actually available in your installation).
+	// Supported languages :
+	// english
+	// spanish
+	// welsh
+	cmd.Flags().StringVarP(&language, "langugage", "l", "english", "the language to use")
 
 	return cmd
 }

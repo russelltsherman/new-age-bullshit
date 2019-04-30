@@ -36,6 +36,8 @@ func EspeakCommand() *cobra.Command {
 		},
 	}
 
+	// see docs for options
+	// http://espeak.sourceforge.net/commands.html
 	cmd.Flags().StringVarP(&amplitude, "amplitude", "a", "10", "Amplitude, 0 to 20")
 	cmd.Flags().StringVarP(&pitch, "pitch", "p", "50", "Pitch adjustment, 0 to 99")
 	cmd.Flags().StringVarP(&speed, "speed", "s", "160", "Speed in words per minute")

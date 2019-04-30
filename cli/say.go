@@ -26,8 +26,12 @@ func SayCommand() *cobra.Command {
 		},
 	}
 
-	// voice options
-	// Alex Fred Samantha Victoria and more
+	// Supported voices :
+	// Alex
+	// Fred
+	// Samantha
+	// Victoria
+	// and more depending on your system install
 	cmd.Flags().StringVarP(&voice, "voice", "v", "Alex", "the voice to use")
 	// rate of speech
 	cmd.Flags().StringVarP(&rate, "rate", "r", "170", "the rate of speech")
