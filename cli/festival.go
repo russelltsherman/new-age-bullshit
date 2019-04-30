@@ -11,6 +11,8 @@ import (
 
 // FestivalCommand returns a cobra command
 func FestivalCommand() *cobra.Command {
+	var language string
+
 	cmd := &cobra.Command{
 		Use:   "festival",
 		Short: "pipe output to festival TTS",
@@ -18,7 +20,7 @@ func FestivalCommand() *cobra.Command {
 			for {
 				sentence := bs.Sentence()
 				c1 := exec.Command("echo", sentence)
-				c2 := exec.Command("festival", "--tts")
+				c2 := exec.Command("festival", "--tts", "--language", language)
 				r, w := io.Pipe()
 				c1.Stdout = w
 				c2.Stdin = r
@@ -31,5 +33,10 @@ func FestivalCommand() *cobra.Command {
 			}
 		},
 	}
+	cmd.Flags().StringVarP(&language, "langugage", "l", "english", "the language to use")
+
+	// --language LANG
+	// Set the default language to LANG. Currently LANG may be one of english, spanish or welsh (depending on what voices are actually available in your installation).
+
 	return cmd
 }
