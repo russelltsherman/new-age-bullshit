@@ -26,7 +26,10 @@ func SayCommand() *cobra.Command {
 		},
 	}
 
+	// voice options
+	// Alex Fred Samantha Victoria and more
 	cmd.Flags().StringVarP(&voice, "voice", "v", "Alex", "the voice to use")
+	// rate of speech
 	cmd.Flags().StringVarP(&rate, "rate", "r", "170", "the rate of speech")
 
 	return cmd
