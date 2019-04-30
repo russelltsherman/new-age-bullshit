@@ -1,0 +1,11 @@
+# ignore build harness
+*build-harness
+
+# ignore vendored packages
+vendor/*
+
+# ignore compiled main
+cli-go
+
+# ignore dist directory
+dist
