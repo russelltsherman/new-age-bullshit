@@ -5,7 +5,6 @@ import (
 	"os"
 
 	homedir "github.com/mitchellh/go-homedir"
-	"github.com/russelltsherman/new-age-bullshit/utils"
 	log "github.com/sirupsen/logrus"
 
 	"github.com/spf13/cobra"
@@ -27,7 +26,6 @@ var rootCmd = &cobra.Command{
 	Use:   "cli-go",
 	Short: "CLI client for go",
 	PersistentPreRun: func(cmd *cobra.Command, args []string) {
-		utils.SetVerbosity(cmd.Flag("verbosity").Value.String())
 	},
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
@@ -58,15 +56,6 @@ func init() {
 
 	// allow user to load a different config file
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.config/.cli-go.yaml)")
-
-	// allow user to specify environemnt
-	// this will allow for a single config file to contain values for different environments
-	rootCmd.PersistentFlags().StringP("env", "", "default", "the environment config to load")
-
-	// allow user to specify verbosity
-	// verbosity level will dynamically change the log output level
-	rootCmd.PersistentFlags().CountP("verbosity", "v", "the verbosity level")
-
 }
 
 // initConfig reads in config file and ENV variables if set.
