@@ -2,12 +2,25 @@
 
 Inspired by [sebpearce](https://github.com/sebpearce/bullshit)
 
-ported to golang and modified to send generated text to text to speech engine.
+cli application which generates pseudo random new age text
+written in golang and includes options to send generated text to TTS engine.
 
-includes execution code examples for the following TTS engines
+includes output options for the following TTS engines
 
-- `say`
+- `cepstral`
 - `espeak`
 - `festival`
-- `Cepstral`
 - `pico`
+- `say`
+
+## load dependencies
+
+```sh
+GO111MODULE=on go mod download
+```
+
+## run
+
+```sh
+go run app.go --help
+```

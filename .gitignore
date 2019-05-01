@@ -5,7 +5,7 @@
 vendor/*
 
 # ignore compiled main
-cli-go
+new-age-bullshit
 
 # ignore dist directory
 dist

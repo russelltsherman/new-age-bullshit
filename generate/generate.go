@@ -35,12 +35,12 @@ func Sentence() string {
 }
 
 // Text generates a number of sentences
-func Text(sentences int) []string {
+func Text(sentences int) string {
 	body := []string{}
 	for i := 0; i < sentences; i++ {
 		body = append(body, Sentence())
 	}
-	return body
+	return strings.Join(body[:], " ")
 }
 
 // initialize the sentence pool

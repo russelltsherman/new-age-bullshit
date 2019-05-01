@@ -12,6 +12,7 @@ func AddCommands(cmd *cobra.Command) {
 		FestivalCommand(),
 		PicoCommand(),
 		SayCommand(),
+		TextCommand(),
 		VersionCommand(),
 	)
 }

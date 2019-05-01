@@ -23,8 +23,8 @@ var (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "cli-go",
-	Short: "CLI client for go",
+	Use:   "new-age-bullshit",
+	Short: "generate pseudo random new age text",
 	PersistentPreRun: func(cmd *cobra.Command, args []string) {
 	},
 	// Uncomment the following line if your bare application
@@ -55,7 +55,7 @@ func init() {
 	// will be global for your application.
 
 	// allow user to load a different config file
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.config/.cli-go.yaml)")
+	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.config/.new-age-bullshit.yaml)")
 }
 
 // initConfig reads in config file and ENV variables if set.
@@ -72,7 +72,7 @@ func initConfig() {
 		}
 
 		viper.AddConfigPath(fmt.Sprintf("%v/.config", home))
-		viper.SetConfigName(".cli-go")
+		viper.SetConfigName(".new-age-bullshit")
 	}
 
 	viper.AutomaticEnv() // read in environment variables that match
